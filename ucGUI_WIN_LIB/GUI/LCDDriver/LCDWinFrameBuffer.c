@@ -135,6 +135,25 @@ void SetLcdFrameBuffer(unsigned long* pFrame)
 
 void SetLcdFlip(unsigned char flip)
 {
+    if ((DisplayFlip == flip) && (fbp))
+      {
+      // primitive content flip
+      int i;
+      int bytes_per_pixel = (bits_per_pixel / 8);
+      char *pLoTuple = fbp;
+      char *pHiTuple = fbp + (bytes_per_pixel * xres * yres) - bytes_per_pixel;
+      while (pLoTuple < pHiTuple)
+        {
+        for (i = 0; i < bytes_per_pixel; i++)
+          {
+          char c = pLoTuple[i];
+          pLoTuple[i] = pHiTuple[i];
+          pHiTuple[i] = c;
+          }
+        pLoTuple += bytes_per_pixel;
+        pHiTuple -= bytes_per_pixel;
+        }
+      }
 	DisplayFlip = !flip;
 }
 
