@@ -1141,6 +1141,18 @@ std::vector<int> MidiStopSoundFind(unsigned char str)
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+// Misa configuration file
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+void SaveToConfigFile(void)
+{
+
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // Misa distortion stub
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -2028,6 +2040,11 @@ void SynthUnassignCC(unsigned char touch_control, unsigned char channel, unsigne
 	SetModified();
 }
 
+void SynthSendLearnCC(unsigned char channel, unsigned int cc)
+{
+//	SetModified();
+}
+
 void SynthAssignStopSound(unsigned char str, unsigned char cc, unsigned char val)
 {
 	SetModified();
@@ -2036,6 +2053,11 @@ void SynthAssignStopSound(unsigned char str, unsigned char cc, unsigned char val
 void SynthUnassignStopSound(unsigned char str, unsigned char cc)
 {
 	SetModified();
+}
+
+void SynthSendLearnStopSound(unsigned char str, unsigned char cc)
+{
+//	SetModified();
 }
 
 std::vector<int> MidiPitchFindEffect(unsigned char chan)
@@ -2302,6 +2324,16 @@ int MisaGetEnableSustain()
 }
 
 int MisaSetEnableSustain(int mode)
+{
+	return 0;
+}
+
+int MisaGetRingingNotes()
+{
+	return 0;
+}
+
+int MisaSetRingingNotes(int mode)
 {
 	return 0;
 }
