@@ -480,6 +480,7 @@ U8 PresetSlideCreateItems(WM_HWIN hParent, bool singleColumn)
 	}
 	x = WM_GetWindowSizeX(hParent);
 	WM_SetSize(hParent, x, WM_GetWindowSizeY(hParent)<y?y:WM_GetWindowSizeY(hParent));
+    if (pPresetsItems)
 				BUTTON_SetPressed(pPresetsItems[2], int(true));
 	return 0;
 }
