@@ -77,7 +77,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ucGUILIB_Release.lib"
+				AdditionalDependencies="$(OutDir)\ucGUI_WIN_LIB.lib"
 				OutputFile=".\Release/MisaGuitar.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -174,7 +174,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ucGUILIB.lib"
+				AdditionalDependencies="$(OutDir)\ucGUI_WIN_LIB.lib"
 				OutputFile=".\Debug/MisaGuitar.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -1343,10 +1343,6 @@
 				</FileConfiguration>
 			</File>
 		</Filter>
-		<File
-			RelativePath="ReadMe.txt"
-			>
-		</File>
 	</Files>
 	<Globals>
 	</Globals>
